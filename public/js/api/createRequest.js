@@ -3,11 +3,11 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-  const xhr = new XMLHttpRequest;
+  let xhr = new XMLHttpRequest;
   xhr.responseType = "json";
   
-  const { url, data, method, callback } = options;  
-  const formData = new FormData();
+  let { url, data, method, callback } = options;  
+  let formData = new FormData();
 
   if (options.method === 'GET') {
     url = url + '?';
