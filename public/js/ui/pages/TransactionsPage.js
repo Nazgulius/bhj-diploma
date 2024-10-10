@@ -195,7 +195,7 @@ class TransactionsPage {
    * */
   renderTransactions(data){
     const content = this.element.querySelector('.content');
-    content.innerHTML = '';
+    content.innerHTML = "";
 
     data.forEach((item) => {
       content.innerHTML += this.getTransactionHTML(item);

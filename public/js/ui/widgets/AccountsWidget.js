@@ -31,18 +31,18 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-    this.element.addEventListener('click', (e) => {
+    this.element.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const createAcc = e.target.closest('.create-account');
-      const accBtn = e.target.closest('.account');
+      const createAccountBtn = e.target.closest(".create-account");
+      const accountBtn = e.target.closest(".account");
 
-      if (createAcc) {
+      if (createAccountBtn) {
         return App.getModal("createAccount").open();
       }
-      
-      if (accBtn) {
-        this.onSelectAccount(accBtn);
+
+      if (accountBtn) {
+        this.onSelectAccount(accountBtn);
       }
     });
   }
@@ -93,11 +93,11 @@ class AccountsWidget {
    * */
   onSelectAccount( element ) {
     const accounts = this.element.querySelectorAll(".active");
-    
+
     for (const element of accounts) {
       element.classList.remove("active");
     }
-    
+
     element.classList.add("active");
     App.showPage("transactions", { account_id: element.dataset.id });
   }

@@ -33,6 +33,11 @@
       "name": "дом",
       "user_id": "9wwuqc68m23bc075",
       "id": "9wwuq4ukm23bt90y"
+    },
+    {
+      "name": "1234",
+      "user_id": "9wwuqc68m23bc075",
+      "id": "9wwuq8wkm23cqbfz"
     }
   ],
   "transactions": [
@@ -170,6 +175,42 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "9wwuqbu8m23d9fcg",
+      "type": "income",
+      "name": "1",
+      "sum": 1000,
+      "account_id": "9wwuq4ukm23bt90y",
+      "user_id": "9wwuqc68m23bc075",
+      "created_at": "2024-10-10T14:00:48.111Z"
+    },
+    {
+      "id": "9wwuq3i4m23d9mfs",
+      "type": "income",
+      "name": "123",
+      "sum": 12345,
+      "account_id": "9wwuq8wkm23cqbfz",
+      "user_id": "9wwuqc68m23bc075",
+      "created_at": "2024-10-10T14:00:57.303Z"
+    },
+    {
+      "id": "9wwuq4fwm23d9sh4",
+      "type": "expense",
+      "name": "2",
+      "sum": 110,
+      "account_id": "9wwuq4ukm23bt90y",
+      "user_id": "9wwuqc68m23bc075",
+      "created_at": "2024-10-10T14:01:05.127Z"
+    },
+    {
+      "id": "9wwuq22wm23da08k",
+      "type": "income",
+      "name": "3",
+      "sum": 312,
+      "account_id": "9wwuq4ukm23bt90y",
+      "user_id": "9wwuqc68m23bc075",
+      "created_at": "2024-10-10T14:01:15.187Z"
     }
   ]
 }

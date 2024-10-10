@@ -25,14 +25,14 @@ class TransactionsWidget {
    * экземпляра окна
    * */
   registerEvents() {
-    const income = this.element.querySelector('.create-income-button');
-    const expense = this.element.querySelector('.create-expense-button');
+    const createIncomeBtn = this.element.querySelector('.create-income-button');
+    const createExpenseBtn = this.element.querySelector('.create-expense-button');
 
-    income.addEventListener('click', () => {
+    createIncomeBtn.addEventListener('click', () => {
       App.getModal('newIncome').open();
     });
 
-    expense.addEventListener('click', () => {
+    createExpenseBtn.addEventListener('click', () => {
       App.getModal('newExpense').open();
     });
   }
