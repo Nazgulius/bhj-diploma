@@ -11,15 +11,20 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback){
-    createRequest({url: this.URL, data, method: 'GET', callback});
+    createRequest({url: this.URL, data, method: "GET", callback});
   }
+
+  static patch(data, callback) {
+    createRequest({url: this.URL, data, method: "PATCH", callback});
+  }
+
   /**
    * Создаёт счёт или доход/расход с помощью запроса
    * на сервер. (в зависимости от того,
    * что наследуется от Entity)
    * */
   static create(data, callback) {
-    createRequest({url: this.URL, data, method: 'PUT', callback});
+    createRequest({url: this.URL, data, method: "PUT", callback});
   }
 
   /**
@@ -27,6 +32,6 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(data, callback ) {
-    createRequest({url: this.URL, data, method: 'DELETE', callback});
+    createRequest({url: this.URL, data, method: "DELETE", callback});
   }
 }

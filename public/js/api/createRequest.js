@@ -22,7 +22,6 @@ const createRequest = (options = {}) => {
   }
   
   xhr.open(options.method, url);
-  xhr.send();
   xhr.send(formData);
 
   xhr.addEventListener('load', function () {

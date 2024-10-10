@@ -38,7 +38,7 @@ class AccountsWidget {
       const accBtn = e.target.closest('.account');
 
       if (createAcc) {
-        return App.getModal('createAccount').open();
+        return App.getModal("createAccount").open();
       }
       
       if (accBtn) {
@@ -58,14 +58,14 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-    const user = User.current();
-    if (!user) {
+    const currentUser = User.current();
+    if (!currentUser) {
       return;
     }
 
-    Account.list(user, (err, response) => {
-      if (response && response.succes) {
-        this.clear;
+    Account.list(currentUser, (err, response) => {
+      if (response && response.success) {
+        this.clear();
         this.renderItem(response.data);
       }
     });
@@ -77,9 +77,9 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-    const acc = this.element.querySelectorAll('.account');
+    const accounts = this.element.querySelectorAll(".account");
 
-    for (const element of acc) {
+    for (const element of accounts) {
       element.remove();
     }
   }
@@ -92,14 +92,14 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-    const accs = this.element.querySelectorAll('.active');
+    const accounts = this.element.querySelectorAll(".active");
     
-    for (const element of accs) {
-      element.classList.remove('active');
+    for (const element of accounts) {
+      element.classList.remove("active");
     }
     
-    element.classList.add('active');
-    App.showPage( 'transactions', { account_id: element.dataset.id });
+    element.classList.add("active");
+    App.showPage("transactions", { account_id: element.dataset.id });
   }
 
   /**
@@ -111,7 +111,7 @@ class AccountsWidget {
     return `<li class="account" data-id="${item.id}">
               <a href="#">
                 <span>${item.name}</span> /
-                <span>${item.sum}</span> 
+                <span>${item.sum} ₽</span>
               </a>
             </li>`;
   }
@@ -124,7 +124,7 @@ class AccountsWidget {
    * */
   renderItem(data){
     data.forEach((item) => {
-      this.element.insertAdjacentHTML('beforeend', this.getAccountHTML(item));
+      this.element.insertAdjacentHTML("beforeend", this.getAccountHTML(item));
     });
   }
 }

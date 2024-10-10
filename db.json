@@ -5,6 +5,12 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "test",
+      "email": "test@test.ru",
+      "password": "12345",
+      "id": "9wwuqc68m23bc075"
     }
   ],
   "accounts": [
@@ -22,6 +28,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "дом",
+      "user_id": "9wwuqc68m23bc075",
+      "id": "9wwuq4ukm23bt90y"
     }
   ],
   "transactions": [

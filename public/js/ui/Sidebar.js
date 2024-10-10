@@ -20,6 +20,7 @@ class Sidebar {
   static initToggleButton() {
     const sidebarMini = document.querySelector('.sidebar-mini');
     const sidebarToggle = document.querySelector('.sidebar-toggle');
+
     sidebarToggle.addEventListener('click', (e) => {
       e.preventDefault();
       sidebarMini.classList.toggle('sidebar-open');
@@ -35,19 +36,20 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
-    const register = document.querySelector('.menu-item_register');
-    const login = document.querySelector('.menu-item_login');
-    const logout = document.querySelector('.menu-item_logout');
+    const register = document.querySelector('.menu-item_register a');
+    const login = document.querySelector('.menu-item_login a');
+    const logout = document.querySelector('.menu-item_logout a');
 
     register.addEventListener('click', () => {
       App.getModal('register').open();
     });
+
     login.addEventListener('click', () => {
       App.getModal('login').open();
-      
     });
+
     logout.addEventListener('click', () => {
-      UserActivation.logout((err, response) => {
+      User.logout((err, response) => {
         if (response.success && response) {
           App.setState('init');
         }

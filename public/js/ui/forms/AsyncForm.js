@@ -26,7 +26,7 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
-    this.element.addEventListener('submit', function(e) {
+    this.element.addEventListener('submit', (e) => {
       e.preventDefault();
       this.submit();
     });
@@ -43,7 +43,7 @@ class AsyncForm {
     const formData = new FormData(this.element);
     const formDataConv = {};
 
-    for (const element of formData.entries) {
+    for (const element of formData.entries()) {
       formDataConv[element[0]] = element[1];
     }
     
